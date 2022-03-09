@@ -1,0 +1,108 @@
+/* Base */
+:root {
+  /*Primary */
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  /*Neutral*/
+  --dark-gray: hsla(0, 0%, 59%, 0.3);
+}
+
+/* Media Query break points */
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+/* Layout */
+body {
+  width: 100vw;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--dark-cyan);
+  background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: right 48vw bottom 25vh, left 45vw top 45vh;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+/* Components */
+/* Card */
+.card {
+  display: flex;
+  width: 35rem;
+  min-height: 37.5rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 8.5rem 0 0 0;
+  background-image: url(../images/bg-pattern-card.svg);
+  background-size: 350px 140px;
+  background-repeat: no-repeat;
+  background-color: white;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 400px) {
+  .card {
+    width: 325px;
+    background-size: 325px 140px;
+  }
+}
+.card .card__picture > img {
+  border: 5px solid white;
+  border-radius: 50%;
+}
+.card .card__name {
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+  margin: 2.5rem 0 1rem 0;
+}
+.card .card__name .card__name-age {
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: var(--dark-grayish-blue);
+  margin-left: 1rem;
+}
+.card .card__city {
+  font-size: 1.3rem;
+  color: var(--dark-grayish-blue);
+  margin-bottom: 2.5rem;
+}
+.card .flex-container__card__stats {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 2.5rem 4.5rem;
+  justify-content: space-between;
+  text-align: center;
+  border-top: 1px solid var(--dark-gray);
+}
+.card .flex-container__card__stats .card__stats .stats-num {
+  font-family: "Kumbh Sans";
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+  margin: 0 0 0.5rem 0;
+}
+.card .flex-container__card__stats .card__stats .stats-text {
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  color: var(--dark-grayish-blue);
+}
+
+/*# sourceMappingURL=style.css.map */

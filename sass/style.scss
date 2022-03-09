@@ -1,0 +1,139 @@
+/* Base */
+
+// Colours
+:root {
+  /*Primary */
+  --dark-cyan: hsl(185, 75%, 39%); // Background colour body
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%); // Font colour name and stats numbers
+  --dark-grayish-blue: hsl(227, 10%, 46%); // Font colour city and stats text
+
+  /*Neutral*/
+  --dark-gray: hsla(0, 0%, 59%, 0.3); // thin line above stats
+}
+
+/* Media Query break points */
+$bp-desktop-max: 400px; // desktop view: card 350px + 50px left and right margin
+$card-width-mobile: 325px; // mobile view: card and bg-header-card 325px, left and right margin 25px. Total width: 325px + 50px = 375px.
+
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px (10px/16px = 62.5%)
+  box-sizing: border-box;
+}
+
+/* Layout */
+body {
+   width: 100vw;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background: {
+    color: var(--dark-cyan);
+    image: url(../images/bg-pattern-top.svg) , url(../images/bg-pattern-bottom.svg);
+    repeat: no-repeat;
+    position: right 48vw bottom 25vh, left 45vw top 45vh;  
+  }; 
+  font: {
+    family: "Kumbh Sans", sans-serif;
+    size: 1.8rem;
+    weight:400;
+  } 
+}
+
+
+/* Components */
+
+/* Card */
+
+.card {
+  display: flex;
+  width: 35rem;
+  min-height: 37.5rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 8.5rem 0 0 0;
+  background: {
+    image: url(../images/bg-pattern-card.svg);
+    size: 350px 140px;
+    repeat:no-repeat;
+    color: white;
+  }
+
+  // Media queries
+  @media only screen and (max-width: $bp-desktop-max) {
+    width: $card-width-mobile;
+    background-size: $card-width-mobile 140px;
+  }
+
+  border-radius: 10px;
+
+    & .card__picture > img{
+      border: 5px solid white;
+      border-radius: 50%;
+    }
+
+    & .card__name {
+      font: {
+        weight: 700;
+      }
+      color: var(--very-dark-desaturated-blue);
+      margin: 2.5rem 0 1rem 0;
+
+       & .card__name-age {
+        font: {  
+          weight: 400;
+          size: 1.8rem;
+        }
+        color: var(--dark-grayish-blue);
+        margin-left: 1rem;
+       }
+    }
+
+    & .card__city {
+      font-size: 1.3rem;
+      color: var(--dark-grayish-blue);
+      margin-bottom: 2.5rem;    
+  }
+
+  & .flex-container__card__stats {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding: 2.5rem 4.5rem;
+      justify-content: space-between;
+      text-align: center;
+      border-top: 1px solid var(--dark-gray);
+
+      & .card__stats {
+        & .stats-num {
+          font: {
+            family: "Kumbh Sans";
+            weight: 700;
+          }
+          color: var(--very-dark-desaturated-blue);
+          margin: 0 0 0.5rem 0;
+        }
+
+        & .stats-text {
+          font: {
+            size: 1rem;
+          }
+          letter-spacing: 0.2rem;
+          color: var(--dark-grayish-blue);
+        }
+      }
+    }
+}

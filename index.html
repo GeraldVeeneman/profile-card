@@ -5,24 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Google Fonts -->    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor Challenge #3 | Profile Card Component</title>
 
  
 </head>
 <body>
-  Victor Crest
-  26
-  London
+  <main>
+    <article class="card">
 
-  80K
-  Followers
-
-  803K
-  Likes
-
-  1.4K
-  Photos
-  
+      <div class="card__picture"><img src="images/image-victor.jpg"/></div>
+      <p class="card__name">Victor Crest<span class="card__name-age">26</span></p>
+      <p class="card__city">London</p>      
+      <div class="flex-container__card__stats">
+          <div class="card__stats">
+            <div class="stats-num">80K</div>
+            <div class="stats-text">Followers</div>
+          </div>
+          <div class="card__stats">
+            <p class="stats-num">803K</p>
+            <p class="stats-text">Likes</p>
+          </div>
+          <div class="card__stats">
+            <p class="stats-num">1.4K</p>
+            <p class="stats-text">Photos</p>
+          </div>
+        </div>
+    </article>
+  </main>
 </body>
 </html>
